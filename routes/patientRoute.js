@@ -2,12 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Patient = require("../models/patient");
 
-// router.post("/patient/add", (req, res) => {
-//   var pdata = new Patient(req.body);
-//   pdata.save().then(() => {
-//     res.send("Patient Registered");
-//   });
-// });
 router.post("/patient/add", (req, res) => {
   const fname = req.body.fname;
   const lname = req.body.lname;
@@ -16,8 +10,6 @@ router.post("/patient/add", (req, res) => {
   const address = req.body.address;
   const email = req.body.email;
   const password = req.body.password;
-  console.log(lname);
-  // const himage=req.file.path;
   bcrypt.hash(password, 10, function (err, hash) {
     var pdata = new Patient({
       fname: fname,

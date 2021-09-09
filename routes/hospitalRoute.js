@@ -50,7 +50,6 @@ router.post("/hospital/login", function (req, res) {
         }
         res.status(200).json({
           success: "true",
-          // token:token
         });
       });
     })
