@@ -1,21 +1,12 @@
 const mongoose = require("mongoose");
 const PatientSchema = new mongoose.Schema({
-  name: {
+  fname: {
     type: String,
     required: true,
   },
-  address: {
-    type: String,
-  },
-  email: {
+  lname: {
     type: String,
     required: true,
-    unique: true,
-  },
-  mobile: {
-    type: String,
-    required: true,
-    unique: true,
   },
   age: {
     type: Number,
@@ -24,16 +15,18 @@ const PatientSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
-  bloodGroup: {
+
+  address: {
     type: String,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
   },
   password: {
     type: String,
     required: true,
-  },
-  profileImg: {
-    type: String,
-    default: null,
   },
 });
 
